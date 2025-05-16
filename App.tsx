@@ -3,6 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 // import { onAuthStateChanged, User } from 'firebase/auth';
 // import { auth } from '@/firebase/firebaseConfig';
 import AppStackNavigation from '@/navigation/AppStackNavigation';
+import { PaperProvider } from 'react-native-paper';
+import GlobalContextProvider from '@/context/GlobalContextProvider';
+import { SafeAreaView, Text } from 'react-native';
 
 export default function App() {
   // const [user, setUser] = useState<User>();
@@ -12,8 +15,12 @@ export default function App() {
   // }, []);
 
   return (
-    <NavigationContainer>
-      <AppStackNavigation />
-    </NavigationContainer>
+    <GlobalContextProvider>
+      <PaperProvider>
+        <NavigationContainer>
+          <AppStackNavigation />
+        </NavigationContainer>
+      </PaperProvider>
+    </GlobalContextProvider>
   );
 }

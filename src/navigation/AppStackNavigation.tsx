@@ -10,7 +10,8 @@ const AppStackNavigation = () => {
             initialRouteName={RouteName.Login}
             screenOptions={() => ({
                 headerShown: false,
-            })}>
+            })}
+            >
             <Stack.Screen
                 name={RouteName.Login}
                 component={LoginScreen}
