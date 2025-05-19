@@ -3,32 +3,32 @@ import { Todo } from "@/model/Todo";
 export const dummyData: Todo[] = [
     {
         id: 0,
-        label: "Fix an ability to display all tasks",
-        checked: false,
+        title: "Fix an ability to display all tasks",
+        done: false,
     },
     {
         id: 1,
-        label: "Fix a layout, checkboxes should be listed in a column",
-        checked: false,
+        title: "Fix a layout, checkboxes should be listed in a column",
+        done: false,
     },
     {
         id: 2,
-        label: "Fix an ability to add a new task",
-        checked: false,
+        title: "Fix an ability to add a new task",
+        done: false,
     },
     {
         id: 3,
-        label: "Fix an ability to toggle a task",
-        checked: false,
+        title: "Fix an ability to toggle a task",
+        done: false,
     },
     {
         id: 4,
-        label: "Fix an ability to delete a task",
-        checked: false,
+        title: "Fix an ability to delete a task",
+        done: false,
     },
     {
         id: 5,
-        label: "Fix an ability to count completed tasks",
-        checked: false,
+        title: "Fix an ability to count completed tasks",
+        done: false,
     },
 ];

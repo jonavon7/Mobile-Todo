@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-// import { onAuthStateChanged, User } from 'firebase/auth';
-// import { auth } from '@/firebase/firebaseConfig';
 import AppStackNavigation from '@/navigation/AppStackNavigation';
 import { PaperProvider } from 'react-native-paper';
 import GlobalContextProvider from '@/context/GlobalContextProvider';
-import { SafeAreaView, Text } from 'react-native';
+import { useColorScheme } from 'react-native';
+import { darkTheme, lightTheme } from '@/presentation/theme/CustomTheme';
 
 export default function App() {
-  // const [user, setUser] = useState<User>();
-
-  // useEffect(() => {
-  //   return onAuthStateChanged(auth, setUser);
-  // }, []);
+  const colorScheme = useColorScheme();
 
   return (
     <GlobalContextProvider>
-      <PaperProvider>
+      <PaperProvider theme={colorScheme === 'dark' ? darkTheme : lightTheme}>
         <NavigationContainer>
           <AppStackNavigation />
         </NavigationContainer>

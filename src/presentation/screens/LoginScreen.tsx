@@ -1,3 +1,4 @@
+import { RouteName } from '@/navigation/RouteName';
 import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth';
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet } from 'react-native';
@@ -9,26 +10,17 @@ export default function LoginScreen({ navigation }) {
     const [password, setPassword] = useState('');
 
     const login = () => {
-        console.log('click')
         signInWithEmailAndPassword(getAuth(), 'admin@test.com', 'admin1')
             .then(() => {
-                console.log('User account created & signed in!');
+                console.log('Signed in!');
             })
             .catch(error => {
-                if (error.code === 'auth/email-already-in-use') {
-                    console.log('That email address is already in use!');
-                }
-
-                if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
-                }
-
                 console.error(error);
             });
     };
 
     return (
-        <KeyboardAvoidingView style={[styles.container, {backgroundColor: colors.backdrop}]} behavior="padding">
+        <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.backdrop }]} behavior="padding">
             <Card style={styles.card} elevation={5}>
                 <Card.Content>
                     {/* <Image
@@ -64,9 +56,14 @@ export default function LoginScreen({ navigation }) {
                     >
                         Login
                     </Button>
-                    <Text variant="bodySmall" style={[styles.footer, {color: colors.outline}]}>
+                    <Button
+                        mode='text'
+                        onPress={() => navigation.navigate(RouteName.Register)}
+                        style={styles.button}
+                        labelStyle={{ color: colors.outline }}
+                    >
                         Don’t have an account? Sign Up
-                    </Text>
+                    </Button>
                 </Card.Content>
             </Card>
         </KeyboardAvoidingView>
@@ -75,34 +72,30 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      padding: 20,
+        flex: 1,
+        justifyContent: 'center',
+        padding: 20,
     },
     card: {
-      borderRadius: 16,
-      paddingVertical: 20,
-      paddingHorizontal: 10,
+        borderRadius: 16,
+        paddingVertical: 20,
+        paddingHorizontal: 10,
     },
     logo: {
-      width: 80,
-      height: 80,
-      alignSelf: 'center',
-      marginBottom: 10,
+        width: 80,
+        height: 80,
+        alignSelf: 'center',
+        marginBottom: 10,
     },
     title: {
-      textAlign: 'center',
-      marginBottom: 20,
+        textAlign: 'center',
+        marginBottom: 20,
     },
     input: {
-      marginVertical: 8,
+        marginVertical: 8,
     },
     button: {
-      marginTop: 16,
-      borderRadius: 8,
+        marginTop: 16,
+        borderRadius: 8,
     },
-    footer: {
-      textAlign: 'center',
-      marginTop: 16,
-    },
-  });
+});

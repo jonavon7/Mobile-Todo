@@ -1,10 +1,12 @@
 export interface Todo {
     id: number;
-    label: string;
-    checked: boolean;
+    title: string;
+    done: boolean;
 }
 
 export interface TodosInfo {
     todos: Todo[];
-    createdTodos: number;
+    pendingTodos: number;
+    completedTodos: number;
+    allTodos: number; 
 }

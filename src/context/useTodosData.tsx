@@ -10,17 +10,21 @@ export interface TodosData {
 const TodosContext = createContext<TodosData>({
     todosInfo: {
         todos: [],
-        createdTodos: 0,
+        pendingTodos: 0,
+        completedTodos: 0,
+        allTodos: 0,
     },
     setTodos: () => { },
 });
 
 export const useTodosData = (): TodosData => useContext(TodosContext);
 
-const TodosDataProvider = ({ children: children }) => {
+export const TodosDataProvider = ({ children: children }) => {
     const [todosInfo, setTodos] = useState<TodosInfo>({
         todos: dummyData,
-        createdTodos: dummyData.length - 1,
+        pendingTodos: dummyData.filter(todo => !todo.done).length,
+        completedTodos: dummyData.filter(todo => todo.done).length,
+        allTodos: dummyData.length - 1,
     });
 
     const value = {
@@ -30,6 +34,3 @@ const TodosDataProvider = ({ children: children }) => {
 
     return <TodosContext.Provider value={value}>{children}</TodosContext.Provider>
 }
-
-export default TodosDataProvider;
-
