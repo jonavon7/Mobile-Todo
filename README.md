@@ -100,7 +100,7 @@ yarn ios
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| ![Light Mode](https://via.placeholder.com/300x600?text=Light+Mode) | ![Dark Mode](https://via.placeholder.com/300x600?text=Dark+Mode) |
+| ![Screenshot_1747923392](https://github.com/user-attachments/assets/05acef16-6349-471a-b6e6-5e26dc60b057) | ![Screenshot_1747923527](https://github.com/user-attachments/assets/b355bc7f-ba33-4d08-a2e4-631691c1bf6d) |
 
 ---
 
