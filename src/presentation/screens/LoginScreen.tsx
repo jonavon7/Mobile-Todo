@@ -10,7 +10,7 @@ export default function LoginScreen({ navigation }) {
     const [password, setPassword] = useState('');
 
     const login = () => {
-        signInWithEmailAndPassword(getAuth(), 'admin@test.com', 'admin1')
+        signInWithEmailAndPassword(getAuth(), email, password)
             .then(() => {
                 console.log('Signed in!');
             })

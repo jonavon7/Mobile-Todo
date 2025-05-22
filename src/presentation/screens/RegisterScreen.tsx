@@ -10,7 +10,7 @@ const RegisterScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
 
     const register = async () => {
-        createUserWithEmailAndPassword(getAuth(), 'jane.doe@example.com', 'SuperSecretPassword!')
+        createUserWithEmailAndPassword(getAuth(), email, password)
             .then(() => {
                 console.log('User account created & signed in!');
             })
