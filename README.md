@@ -1,15 +1,73 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 Mobile-ToDo
 
-# Getting Started
+**Mobile-ToDo** is a sleek and intuitive task management app built with [React Native](https://reactnative.dev). It helps you organize your tasks, track progress, and boost productivity with features like task filtering, dark mode, and more.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- ✅ **Add, Edit, and Delete Tasks**: Manage your to-do list effortlessly.
+- 🌗 **Dark Mode**: Seamlessly switch between light and dark themes.
+- 🔍 **Search and Filter**: Quickly find tasks or filter by status (e.g., completed, pending).
+- 📊 **Progress Tracking**: View your progress with task completion stats.
+- 🔔 **Reminders**: Get notified about upcoming tasks (future feature).
+- 🌐 **Localization**: Support for multiple languages (future feature).
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
+## 🛠️ Tech Stack
+
+- **Framework**: [React Native](https://reactnative.dev)
+- **Navigation**: [React Navigation](https://reactnavigation.org)
+- **UI Components**: [React Native Paper](https://callstack.github.io/react-native-paper/)
+- **State Management**: React Context API
+- **Styling**: Custom themes for light and dark modes
+- **Data**: Dummy data for development, easily replaceable with an API or database
+
+---
+
+## 📖 Getting Started
+
+Follow these steps to set up and run the app locally.
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or Yarn
+- Android Studio (for Android development)
+- Xcode (for iOS development)
+- React Native CLI
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/mobile-todo.git
+   cd mobile-todo
+   ```
+
+2. Install dependencies:
+   ```sh
+   # Using npm
+   npm install
+
+   # OR using Yarn
+   yarn install
+   ```
+
+3. Install CocoaPods (for iOS):
+   ```sh
+   cd ios
+   pod install
+   cd ..
+   ```
+
+---
+
+## 🏃‍♂️ Running the App
+
+### Start Metro Bundler
+Run the Metro bundler in your project root:
 ```sh
 # Using npm
 npm start
@@ -18,12 +76,7 @@ npm start
 yarn start
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
+### Run on Android
 ```sh
 # Using npm
 npm run android
@@ -32,24 +85,7 @@ npm run android
 yarn android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
+### Run on iOS
 ```sh
 # Using npm
 npm run ios
@@ -58,41 +94,94 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## ✨ App Preview
 
-## Step 3: Modify your app
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Light Mode](https://via.placeholder.com/300x600?text=Light+Mode) | ![Dark Mode](https://via.placeholder.com/300x600?text=Dark+Mode) |
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🧩 Folder Structure
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```
+MobileToDo/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── context/          # Context API for state management
+│   ├── data/             # Dummy data for development
+│   ├── model/            # TypeScript models
+│   ├── navigation/       # Navigation stack
+│   ├── screens/          # App screens (e.g., TodoScreen)
+│   ├── theme/            # Light and dark themes
+│   └── utils/            # Utility functions
+├── App.tsx               # Entry point of the app
+├── README.md             # Project documentation
+└── package.json          # Project dependencies
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
+## 🐛 Troubleshooting
 
-You've successfully run and modified your React Native App. :partying_face:
+### Common Issues
 
-### Now what?
+- **Metro Bundler not starting**:
+  - Run `npm start --reset-cache` or `yarn start --reset-cache`.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- **Android build fails**:
+  - Ensure Android Studio is installed and the emulator is running.
 
-# Troubleshooting
+- **iOS build fails**:
+  - Run `pod install` in the `ios` directory.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+For more help, check the [React Native Troubleshooting Guide](https://reactnative.dev/docs/troubleshooting).
 
-# Learn More
+---
 
-To learn more about React Native, take a look at the following resources:
+## 🤝 Contributing
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# Mobile-Todo
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```sh
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```sh
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 Acknowledgments
+
+- [React Native](https://reactnative.dev) for the amazing framework.
+- [React Native Paper](https://callstack.github.io/react-native-paper/) for the beautiful UI components.
+- [React Navigation](https://reactnavigation.org) for seamless navigation.
+
+---
+
+## 📬 Contact
+
+For questions or feedback, feel free to reach out:
+
+- **GitHub**: [jonavon7](https://github.com/jonavon7)
+
+---
+
+Happy coding! 🚀
