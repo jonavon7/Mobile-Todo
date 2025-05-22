@@ -100,7 +100,7 @@ yarn ios
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| ![Screenshot_1747923392](https://github.com/user-attachments/assets/05acef16-6349-471a-b6e6-5e26dc60b057) ![Screenshot_1747923537](https://github.com/user-attachments/assets/0fadbf73-9c20-4ccc-9a95-61434292f7c3) | ![Screenshot_1747923527](https://github.com/user-attachments/assets/b355bc7f-ba33-4d08-a2e4-631691c1bf6d) ![Screenshot_1747923502](https://github.com/user-attachments/assets/48ccebd6-d6b4-4431-8424-3a76fe1f4751)|
+| ![Screenshot_1747923392](https://github.com/user-attachments/assets/05acef16-6349-471a-b6e6-5e26dc60b057) ![Screenshot_1747923502](https://github.com/user-attachments/assets/48ccebd6-d6b4-4431-8424-3a76fe1f4751) | ![Screenshot_1747923527](https://github.com/user-attachments/assets/b355bc7f-ba33-4d08-a2e4-631691c1bf6d) ![Screenshot_1747923537](https://github.com/user-attachments/assets/0fadbf73-9c20-4ccc-9a95-61434292f7c3) |
 
 ---
 
