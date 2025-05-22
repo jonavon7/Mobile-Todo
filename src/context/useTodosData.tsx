@@ -1,6 +1,6 @@
 import { dummyData } from "@/data/dummyData";
 import { TodosInfo } from "@/model/Todo";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 export interface TodosData {
     todosInfo: TodosInfo;
@@ -27,10 +27,8 @@ export const TodosDataProvider = ({ children: children }) => {
         allTodos: dummyData.length - 1,
     });
 
-    const value = {
-        todosInfo,
-        setTodos,
-    };
+    // Prevent unnecessary re-renders by using useMemo
+    const value = useMemo(() => ({ todosInfo, setTodos }), [todosInfo]);
 
     return <TodosContext.Provider value={value}>{children}</TodosContext.Provider>
 }

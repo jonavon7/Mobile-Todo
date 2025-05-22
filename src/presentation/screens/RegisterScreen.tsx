@@ -1,7 +1,7 @@
 import { RouteName } from '@/navigation/RouteName';
 import { createUserWithEmailAndPassword, getAuth } from '@react-native-firebase/auth';
 import { useState } from 'react';
-import { KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { Image, KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { Button, Card, Text, TextInput, useTheme } from 'react-native-paper';
 
 const RegisterScreen = ({ navigation }) => {
@@ -31,11 +31,11 @@ const RegisterScreen = ({ navigation }) => {
         <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.backdrop }]} behavior="padding">
             <Card style={styles.card} elevation={5}>
                 <Card.Content>
-                    {/* <Image
-                        source={require('../../assets/logo.png')} // replace with your logo
+                    <Image
+                        source={require('../assets/Logo.png')}
                         style={styles.logo}
                         resizeMode="contain"
-                    /> */}
+                    />
                     <Text variant="headlineMedium" style={styles.title}>
                         Create Account
                     </Text>
@@ -66,7 +66,7 @@ const RegisterScreen = ({ navigation }) => {
                     </Button>
                     <Button
                         mode="text"
-                        onPress={() => navigation.navigate(RouteName.Login)}
+                        onPress={() => navigation.replace(RouteName.Login)}
                         style={styles.footer}
                         labelStyle={{ color: colors.outline }}
                     >
@@ -90,10 +90,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     logo: {
-        width: 80,
-        height: 80,
+        width: 150,
+        height: 150,
         alignSelf: 'center',
-        marginBottom: 10,
+        marginBottom: 16,
+        borderRadius: 100,
     },
     title: {
         textAlign: 'center',

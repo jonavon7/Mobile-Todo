@@ -17,6 +17,12 @@ const TodoScreen: React.FC = () => {
         signOut(getAuth()).then(() => console.log('User signed out!'));
     };
 
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'short',
+    }).format(new Date());
+
     return (
         <View style={[styles.container, { backgroundColor: colors.backdrop }]}>
             <View style={[styles.header, { backgroundColor: colors.primary }]}>
@@ -25,7 +31,7 @@ const TodoScreen: React.FC = () => {
                         Today’s Task
                     </Text>
                     <Text style={[styles.dateText, { color: colors.onPrimary }]}>
-                        {new Date().toLocaleDateString()}
+                        {formattedDate}
                     </Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
                         <View style={styles.badgeContainer}>
@@ -67,7 +73,6 @@ const TodoScreen: React.FC = () => {
                     icon="logout"
                     size={iconSizeMedium}
                     onPress={logOut}
-                    style={styles.logoutButton}
                     iconColor={colors.onPrimary}
                 />
             </View>
@@ -117,14 +122,11 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         opacity: 0.8,
     },
-    headerSubText: {
-        marginTop: 4,
-    },
     badgeContainer: {
         marginRight: 8,
         flexDirection: 'row',
         alignItems: 'center',
-        opacity: 0.9,
+        opacity: 0.8,
     },
     badgeText: {
         marginRight: 5,
@@ -134,9 +136,6 @@ const styles = StyleSheet.create({
         marginRight: 8,
         fontSize: 16,
         fontWeight: 'bold',
-    },
-    logoutButton: {
-        paddingTop: 16,
     },
     addButton: {
         marginTop: 16,
